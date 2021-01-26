@@ -2,6 +2,7 @@ let herosString = localStorage.getItem('Heros');
 
 let herosArr = JSON.parse(herosString);
 
+const spr = []
 
 function showRandTwo(){
     let gallery = document.querySelector("#gallery");
