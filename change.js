@@ -49,7 +49,7 @@ function change(id) {
         }
 
     }
-    location.href = "gallery.html"; //why not work?
+    location.href = "index.html"; //why not work?
 
 }
 
