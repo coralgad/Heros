@@ -31,7 +31,7 @@ function add() {
         const newHero = new Hero(name.value, mainStrength.value, imageUrl.value, id);
         let heroString = JSON.stringify(newHero); //now its string
         localStorage.setItem('Hero', heroString);
-        location.href = "gallery.html";
+        location.href = "index.html";
 
     }
     
