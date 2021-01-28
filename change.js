@@ -45,9 +45,11 @@ function change(id) {
             hero.img = newUrl.value;
             let herosString = JSON.stringify(herosArr); //now its string
             localStorage.setItem('Heros', herosString);
+
         }
 
     }
+    location.href = "gallery.html"; //why not work?
 
 }
 
