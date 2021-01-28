@@ -1,33 +1,44 @@
-class Hero{
-    constructor(name,mainStrength,imageUrl){
+let herosString = localStorage.getItem('Heros');
+
+let herosArr = JSON.parse(herosString);
+
+class Hero {
+    constructor(name, mainStrength, imageUrl, id) {
         this.name = name;
-        this.power= mainStrength;
-        this.img =imageUrl;
+        this.power = mainStrength;
+        this.img = imageUrl;
+        this.id = id;
     }
 }
 
-
-window.onload = function(){
-    document.querySelector("#addBtn").addEventListener("click", function (e){
+window.onload = function () {
+    document.querySelector("#addBtn").addEventListener("click", function (e) {
         e.preventDefault();
         add();
     })
 }
 
-function add(){
-    const name = document.querySelector("#name");
-    const mainStrength = document.querySelector("#mainStrength");
-    const imageUrl = document.querySelector("#imageUrl");
+function add() {
+    let name = document.querySelector("#name");
+    let mainStrength = document.querySelector("#mainStrength");
+    let imageUrl = document.querySelector("#imageUrl");
 
-    if((name == '') || (mainStrength == '') ||(imageUrl == '')){
+    if ((name == '') || (mainStrength == '') || (imageUrl == '')) {
         alert("oops! you missed something");
     }
-    else{
-        
-        const newHero = new Hero(name.value, mainStrength.value, imageUrl.value);
+    else {
+        let id = herosArr.length + 1;
+        const newHero = new Hero(name.value, mainStrength.value, imageUrl.value, id);
         let heroString = JSON.stringify(newHero); //now its string
         localStorage.setItem('Hero', heroString);
+        if (true){
+        name = '';
+        mainStrength = '';
+        imageUrl = '';
+        }
+
     }
+
 }
 
 
