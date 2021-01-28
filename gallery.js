@@ -1,8 +1,10 @@
 class Hero {
-    constructor(name, power, img) {
+    constructor(name, power, img, id) {
         this.name = name;
         this.power = power;
         this.img = img;
+        this.id = id;
+
     }
 }
 
@@ -16,14 +18,16 @@ let heros = JSON.parse(newHerosString);
 
 if (heros == null) {
 
-    heros = [new Hero('Spiderman', 'Overall Coolness and spidey powers!', 'https://image.api.playstation.com/vulcan/img/rnd/202011/0714/vuF88yWPSnDfmFJVTyNJpVwW.png'),
-    new Hero('Wolverine', 'Badassery. Thats it.', 'https://fastly.syfy.com/sites/syfy/files/styles/1200x680/public/2020/02/stl149580.jpg?offset-x=0&offset-y=0'),
-    new Hero('Deadpool', 'Cant die and great sense of humor.', 'https://miro.medium.com/max/3840/1*0ubYRV_WNR9iYrzUAVINHw.jpeg')];
+    heros = [new Hero('Spiderman', 'Overall Coolness and spidey powers!', 'https://image.api.playstation.com/vulcan/img/rnd/202011/0714/vuF88yWPSnDfmFJVTyNJpVwW.png', 1),
+    new Hero('Wolverine', 'Badassery. Thats it.', 'https://fastly.syfy.com/sites/syfy/files/styles/1200x680/public/2020/02/stl149580.jpg?offset-x=0&offset-y=0', 2),
+    new Hero('Deadpool', 'Cant die and great sense of humor.', 'https://miro.medium.com/max/3840/1*0ubYRV_WNR9iYrzUAVINHw.jpeg', 3)];
 }
 
 if (newHero != null) {
     heros.push(newHero);
 }
+
+localStorage.removeItem('Hero');
 
 function showHeros() {
 

@@ -10,3 +10,13 @@ body{
     margin: auto;
     text-align: center;
 }
+
+#result{
+    font-size: 48px;
+     font-family: 'BentonSansCond', sans-serif;
+  Font-weight: bold;
+    color: red;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
